@@ -17,6 +17,9 @@ run: swag-v1 ### swag run
 	DISABLE_SWAGGER_HTTP_HANDLER='' GIN_MODE=debug CGO_ENABLED=0 go run -tags migrate ./cmd/app
 .PHONY: run
 
+publisher:
+	go run ./cmd/publisher
+
 migrate-create:  ### create new migration
 	migrate create -ext sql -dir migrations 'migrate_name'
 .PHONY: migrate-create
