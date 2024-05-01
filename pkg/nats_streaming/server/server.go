@@ -2,6 +2,7 @@ package server
 
 import (
 	"fmt"
+	"log"
 	"order-stream/pkg/logger"
 	nstream "order-stream/pkg/nats_streaming"
 	"time"
@@ -90,6 +91,14 @@ func (s *Server) reconnect() {
 	s.stop = make(chan struct{})
 
 	go s.consumer()
+}
+
+func (s *Server) Publish(channel string, data []byte) error {
+	err := (*s.conn.Connection).Publish(channel, data)
+	if err != nil {
+		log.Fatalf("Failed to publish order: %v", err)
+	}
+	return nil
 }
 
 // Notify

@@ -14,5 +14,5 @@ postgres:
 
 natsstreaming:
   url: 'localhost:4222'
-  cluster_id: 'cluster'
-  client_id: 'user'
+  cluster_id: 'test-cluster'
+  client_id: 'subscriber'

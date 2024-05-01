@@ -18,7 +18,7 @@ type orderRoutes struct {
 func newOrderRoutes(routes map[string]server.MsgHandler, t usecase.Order) {
 	r := &orderRoutes{t}
 	{
-		routes["get-orders"] = r.getOrders()
+		routes["orders"] = r.getOrders()
 	}
 }
 

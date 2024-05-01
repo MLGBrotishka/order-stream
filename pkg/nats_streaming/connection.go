@@ -1,4 +1,4 @@
-package nstream
+package natsstreaming
 
 import (
 	"fmt"
@@ -55,6 +55,7 @@ func (c *Connection) connect() error {
 	var err error
 	// Создание опций подключения
 	opts := []stan.Option{
+		stan.NatsURL(c.URL),
 		stan.SetConnectionLostHandler(func(_ stan.Conn, reason error) {
 			log.Fatalf("Connection lost, reason: %v", reason)
 		}),
