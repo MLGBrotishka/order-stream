@@ -3,7 +3,7 @@
 
 ## Запуск
 
-```make docker``` - запускает базу дунных PG и очередь Nats streaming
+```make docker``` - запускает базу данных PG и очередь Nats streaming
 
 ```make run``` - запускает сервер
 
