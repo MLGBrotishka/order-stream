@@ -1,0 +1,18 @@
+app:
+  name: 'order-stream'
+  version: '1.0.0'
+
+http:
+  port: '8080'
+
+logger:
+  log_level: 'debug'
+  rollbar_env: 'order-stream'
+
+postgres:
+  pool_max: 2
+
+natsstreaming:
+  url: 'localhost:4222'
+  cluster_id: 'cluster'
+  client_id: 'user'
