@@ -49,6 +49,10 @@ const docTemplate = `{
     "definitions": {
         "entity.Delivery": {
             "type": "object",
+            "required": [
+                "address",
+                "name"
+            ],
             "properties": {
                 "address": {
                     "type": "string",
@@ -82,6 +86,9 @@ const docTemplate = `{
         },
         "entity.Item": {
             "type": "object",
+            "required": [
+                "chrt_id"
+            ],
             "properties": {
                 "brand": {
                     "type": "string",
@@ -131,6 +138,13 @@ const docTemplate = `{
         },
         "entity.Order": {
             "type": "object",
+            "required": [
+                "customer_id",
+                "date_created",
+                "items",
+                "order_uid",
+                "payment"
+            ],
             "properties": {
                 "customer_id": {
                     "type": "string",
@@ -192,6 +206,12 @@ const docTemplate = `{
         },
         "entity.Payment": {
             "type": "object",
+            "required": [
+                "bank",
+                "currency",
+                "payment_dt",
+                "transaction"
+            ],
             "properties": {
                 "amount": {
                     "type": "integer",

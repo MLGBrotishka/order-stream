@@ -23,6 +23,9 @@ definitions:
       zip:
         example: "2639809"
         type: string
+    required:
+    - address
+    - name
     type: object
   entity.Item:
     properties:
@@ -59,6 +62,8 @@ definitions:
       track_number:
         example: WBILMTESTTRACK
         type: string
+    required:
+    - chrt_id
     type: object
   entity.Order:
     properties:
@@ -103,6 +108,12 @@ definitions:
       track_number:
         example: WBILMTESTTRACK
         type: string
+    required:
+    - customer_id
+    - date_created
+    - items
+    - order_uid
+    - payment
     type: object
   entity.Payment:
     properties:
@@ -136,6 +147,11 @@ definitions:
       transaction:
         example: b563feb7b2b84b6test
         type: string
+    required:
+    - bank
+    - currency
+    - payment_dt
+    - transaction
     type: object
   v1.response:
     properties:
